@@ -8,7 +8,7 @@ public class PasswordValidator {
 	}
 
 	public boolean validate(String passw) {
-		return hasMoreThanEightCharacters(passw) && containsUpperCaseLetter(passw) && containsLowerCaseLetter(passw);
+		return hasMoreThanEightCharacters(passw) && containsUpperCaseLetter(passw) && containsLowerCaseLetter(passw) && containsNumber(passw);
 	}
 
 	private boolean hasMoreThanEightCharacters(String passw) {
@@ -21,6 +21,10 @@ public class PasswordValidator {
 
 	private boolean containsLowerCaseLetter(String passw) {
 		return passw.matches("^.*[a-z].*$");
+	}
+
+	private boolean containsNumber(String passw) {
+		return passw.matches("^.*\\d.*$");
 	}
 
 }

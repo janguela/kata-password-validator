@@ -41,4 +41,9 @@ public class PasswordValidatorTest {
 		assertFalse(validator.validate("A23456789"));
 	}
 
+	@Test
+	public void returnsFalseWhenPasswordDoesntContainANumber() {
+		assertFalse(validator.validate("Abcdefghim"));
+	}
+
 }
