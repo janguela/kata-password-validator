@@ -18,7 +18,7 @@ public class PasswordValidatorTest {
 
 	@Test
 	public void returnsTrueWhenPasswordIsValid() {
-		assertTrue(validator.validate("Ab3456789"));
+		assertTrue(validator.validate("Ab3456789_"));
 	}
 
 	@Test
@@ -44,6 +44,11 @@ public class PasswordValidatorTest {
 	@Test
 	public void returnsFalseWhenPasswordDoesntContainANumber() {
 		assertFalse(validator.validate("Abcdefghim"));
+	}
+
+	@Test
+	public void returnsFalseWhenPasswordDoesntContainAnUnderscore() {
+		assertFalse(validator.validate("Abcdefghi0"));
 	}
 
 }
