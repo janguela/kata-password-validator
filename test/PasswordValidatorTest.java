@@ -11,7 +11,7 @@ public class PasswordValidatorTest {
 	@Test
 	public void returnsTrueWhenPasswordIsValid() {
 		PasswordValidator validator = new PasswordValidator();
-		assertTrue(validator.validate("A23456789"));
+		assertTrue(validator.validate("Ab3456789"));
 	}
 
 	@Test
@@ -27,9 +27,15 @@ public class PasswordValidatorTest {
 	}
 
 	@Test
-	public void returnsFalseWhenPasswordDoesntContainACapitalLetter() {
+	public void returnsFalseWhenPasswordDoesntContainAnUpperCaseLetter() {
 		PasswordValidator validator = new PasswordValidator();
-		assertFalse(validator.validate("123456789"));
+		assertFalse(validator.validate("1b3456789"));
+	}
+
+	@Test
+	public void returnsFalseWhenPasswordDoesntContainALowerCaseLetter() {
+		PasswordValidator validator = new PasswordValidator();
+		assertFalse(validator.validate("A23456789"));
 	}
 
 }
