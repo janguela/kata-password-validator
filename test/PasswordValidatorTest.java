@@ -3,12 +3,15 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+/**
+ * @author Jordi Anguela (janguela)
+ */
 public class PasswordValidatorTest {
 
 	@Test
 	public void returnsTrueWhenPasswordIsValid() {
 		PasswordValidator validator = new PasswordValidator();
-		assertTrue(validator.validate("123456789"));
+		assertTrue(validator.validate("A23456789"));
 	}
 
 	@Test
@@ -21,6 +24,12 @@ public class PasswordValidatorTest {
 	public void cannotBeNull() {
 		PasswordValidator validator = new PasswordValidator();
 		assertFalse(validator.validate(null));
+	}
+
+	@Test
+	public void returnsFalseWhenPasswordDoesntContainACapitalLetter() {
+		PasswordValidator validator = new PasswordValidator();
+		assertFalse(validator.validate("123456789"));
 	}
 
 }
