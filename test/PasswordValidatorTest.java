@@ -6,9 +6,15 @@ import org.junit.Test;
 public class PasswordValidatorTest {
 
 	@Test
-	public void hasMoreThanEightCharacters() {
+	public void returnsTrueWhenPasswordIsValid() {
 		PasswordValidator validator = new PasswordValidator();
 		assertTrue(validator.validate("123456789"));
+	}
+
+	@Test
+	public void returnsFalseWhenPasswordHasLessThanNineCharacters() {
+		PasswordValidator validator = new PasswordValidator();
+		assertFalse(validator.validate("12345678"));
 	}
 
 	@Test
