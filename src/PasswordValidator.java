@@ -5,7 +5,7 @@ public class PasswordValidator {
 	}
 
 	public boolean validate(String passw) {
-		return passw.length() > 8;
+		return passw != null && passw.length() > 8;
 	}
 
 }
