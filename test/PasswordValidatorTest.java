@@ -23,7 +23,7 @@ public class PasswordValidatorTest {
 
 	@Test
 	public void returnsFalseWhenPasswordHasLessThanNineCharacters() {
-		assertFalse(validator.validate("12345678"));
+		assertFalse(validator.validate("Ab34567_"));
 	}
 
 	@Test
@@ -33,22 +33,22 @@ public class PasswordValidatorTest {
 
 	@Test
 	public void returnsFalseWhenPasswordDoesntContainAnUpperCaseLetter() {
-		assertFalse(validator.validate("1b3456789"));
+		assertFalse(validator.validate("b3456789_"));
 	}
 
 	@Test
 	public void returnsFalseWhenPasswordDoesntContainALowerCaseLetter() {
-		assertFalse(validator.validate("A23456789"));
+		assertFalse(validator.validate("A3456789_"));
 	}
 
 	@Test
 	public void returnsFalseWhenPasswordDoesntContainANumber() {
-		assertFalse(validator.validate("Abcdefghim"));
+		assertFalse(validator.validate("Abbbbbccccc_"));
 	}
 
 	@Test
 	public void returnsFalseWhenPasswordDoesntContainAnUnderscore() {
-		assertFalse(validator.validate("Abcdefghi0"));
+		assertFalse(validator.validate("Ab3456789"));
 	}
 
 }
