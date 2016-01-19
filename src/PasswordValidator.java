@@ -8,12 +8,16 @@ public class PasswordValidator {
 	}
 
 	public boolean validate(String passw) {
-		return hasMoreThanEightCharacters(passw) && containsUpperCaseLetter(passw) && containsLowerCaseLetter(passw) && containsNumber(passw)
-				&& containsUnderscore(passw);
+		return cannotBeNull(passw) && hasMoreThanEightCharacters(passw) && containsUpperCaseLetter(passw) && containsLowerCaseLetter(passw)
+				&& containsNumber(passw) && containsUnderscore(passw);
+	}
+
+	private boolean cannotBeNull(String passw) {
+		return passw != null;
 	}
 
 	private boolean hasMoreThanEightCharacters(String passw) {
-		return passw != null && passw.length() > 8;
+		return passw.length() > 8;
 	}
 
 	private boolean containsUpperCaseLetter(String passw) {
